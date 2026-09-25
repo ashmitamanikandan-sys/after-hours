@@ -5,46 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#060812" />
   <title>After Hours — AstraTech Incident Response</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div class="storm-scene" aria-hidden="true">
-    <div class="storm-sky"></div>
-    <div class="storm-clouds clouds-a"></div>
-    <div class="storm-clouds clouds-b"></div>
-    <div class="lightning-glow"></div>
-
-    <div class="city city-far">
-      <span class="tower t1"></span><span class="tower t2"></span><span class="tower t3"></span>
-      <span class="tower t4"></span><span class="tower t5"></span><span class="tower t6"></span>
-      <span class="tower t7"></span><span class="tower t8"></span><span class="tower t9"></span>
-    </div>
-    <div class="city city-near">
-      <span class="tower n1"></span><span class="tower n2"></span><span class="tower n3"></span>
-      <span class="tower n4"></span><span class="tower n5"></span><span class="tower n6"></span>
-    </div>
-
-    <div class="fog fog-a"></div>
-    <div class="fog fog-b"></div>
-    <div class="rain-field rain-far"></div>
-    <div class="rain-field rain-mid"></div>
-
-    <div class="glass-window">
-      <div class="window-frame frame-left"></div>
-      <div class="window-frame frame-mid"></div>
-      <div class="window-frame frame-right"></div>
-      <div class="glass-sheen"></div>
-      <div class="water-trail w1"></div><div class="water-trail w2"></div><div class="water-trail w3"></div>
-      <div class="water-trail w4"></div><div class="water-trail w5"></div><div class="water-trail w6"></div>
-      <div class="drop d1"></div><div class="drop d2"></div><div class="drop d3"></div><div class="drop d4"></div>
-      <div class="drop d5"></div><div class="drop d6"></div><div class="drop d7"></div><div class="drop d8"></div>
-    </div>
-
-    <div class="office-reflection"></div>
-    <div class="vignette"></div>
+  <div class="storm" aria-hidden="true">
+    <div class="cloud cloud-a"></div>
+    <div class="cloud cloud-b"></div>
+    <div class="lightning"></div>
+    <div class="rain rain-back"></div>
+    <div class="rain rain-front"></div>
+    <div class="skyline skyline-far"></div>
+    <div class="skyline skyline-near"></div>
+    <div class="window-reflection"></div>
   </div>
 
   <div id="flash" class="screen-flash" aria-hidden="true"></div>
@@ -115,6 +87,6 @@
     </footer>
   </main>
 
-  <script src="{{ url_for('static', filename='game.js') }}"></script>
+  <script src="./game.js"></script>
 </body>
-</html>
+</html
