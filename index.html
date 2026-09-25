@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#060812" />
+  <title>After Hours — AstraTech Incident Response</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="storm-scene" aria-hidden="true">
+    <div class="storm-sky"></div>
+    <div class="storm-clouds clouds-a"></div>
+    <div class="storm-clouds clouds-b"></div>
+    <div class="lightning-glow"></div>
+
+    <div class="city city-far">
+      <span class="tower t1"></span><span class="tower t2"></span><span class="tower t3"></span>
+      <span class="tower t4"></span><span class="tower t5"></span><span class="tower t6"></span>
+      <span class="tower t7"></span><span class="tower t8"></span><span class="tower t9"></span>
+    </div>
+    <div class="city city-near">
+      <span class="tower n1"></span><span class="tower n2"></span><span class="tower n3"></span>
+      <span class="tower n4"></span><span class="tower n5"></span><span class="tower n6"></span>
+    </div>
+
+    <div class="fog fog-a"></div>
+    <div class="fog fog-b"></div>
+    <div class="rain-field rain-far"></div>
+    <div class="rain-field rain-mid"></div>
+
+    <div class="glass-window">
+      <div class="window-frame frame-left"></div>
+      <div class="window-frame frame-mid"></div>
+      <div class="window-frame frame-right"></div>
+      <div class="glass-sheen"></div>
+      <div class="water-trail w1"></div><div class="water-trail w2"></div><div class="water-trail w3"></div>
+      <div class="water-trail w4"></div><div class="water-trail w5"></div><div class="water-trail w6"></div>
+      <div class="drop d1"></div><div class="drop d2"></div><div class="drop d3"></div><div class="drop d4"></div>
+      <div class="drop d5"></div><div class="drop d6"></div><div class="drop d7"></div><div class="drop d8"></div>
+    </div>
+
+    <div class="office-reflection"></div>
+    <div class="vignette"></div>
+  </div>
+
+  <div id="flash" class="screen-flash" aria-hidden="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <div class="kicker">ASTRATECH SECURITY OPERATIONS // 47TH FLOOR</div>
+        <h1>AFTER HOURS</h1>
+        <p class="subtitle">A rainy-night corporate cyber thriller</p>
+      </div>
+      <div class="header-controls">
+        <button id="soundBtn" class="control-btn" type="button">SOUND // ON</button>
+        <button id="restartBtn" class="control-btn hidden" type="button">RESTART</button>
+      </div>
+    </header>
+
+    <section id="hud" class="hud hidden" aria-label="Incident status">
+      <div class="metric"><span>CASE</span><strong id="caseMetric">AH-0213</strong></div>
+      <div class="metric"><span>STAGE</span><strong id="roomMetric">0/6</strong></div>
+      <div class="metric threat"><span>THREAT</span><strong id="threatMetric">16%</strong></div>
+      <div class="metric"><span>EVIDENCE</span><strong id="evidenceMetric">0</strong></div>
+      <div class="metric"><span>WINDOW</span><strong id="timerMetric">--:--</strong></div>
+    </section>
+
+    <section id="screen" class="screen briefing-screen">
+      <div class="briefing-grid">
+        <aside class="briefing-side">
+          <div class="case-chip">CASE AH-0213</div>
+          <div class="weather-card">
+            <span>WEATHER</span>
+            <strong>SEVERE THUNDERSTORM</strong>
+            <small>Visibility low // network latency elevated</small>
+          </div>
+          <div class="time-block">
+            <span>LOCAL TIME</span>
+            <strong>02:13 AM</strong>
+          </div>
+          <div class="floor-map" aria-hidden="true">
+            <div class="floor-line"></div><div class="floor-line short"></div><div class="floor-line"></div>
+            <div class="floor-node active"></div><div class="floor-node"></div><div class="floor-node"></div>
+          </div>
+        </aside>
+
+        <div class="briefing-copy">
+          <div class="alert-label">UNUSUAL ACTIVITY DETECTED</div>
+          <h2>Mission briefing</h2>
+          <p>The storm has emptied AstraTech's upper floors. You are the only operator still watching when several small anomalies begin appearing across the company's systems.</p>
+          <p>Nothing is obviously catastrophic. That is the problem.</p>
+          <p class="muted">Investigate what does not fit. Click evidence in each scene. You will not be told immediately when you are wrong.</p>
+
+          <div class="briefing-objectives">
+            <div><span>01</span> Identify the initial access path</div>
+            <div><span>02</span> Trace the account activity</div>
+            <div><span>03</span> Determine whether the breach spread</div>
+            <div><span>04</span> Contain the incident before the window closes</div>
+          </div>
+
+          <button id="startBtn" class="primary-btn" type="button">BEGIN INVESTIGATION</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <span>ASTRATECH // INTERNAL SECURITY TRAINING ENVIRONMENT</span>
+      <span id="footerSignal">SIGNAL STABLE</span>
+    </footer>
+  </main>
+
+  <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>
